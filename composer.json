@@ -1,0 +1,20 @@
+{
+    "name": "blob/laravel-bulkvs",
+    "description": "A simple Laravel interface for interacting with the Bulkvs API.",
+    "keywords": ["laravel", "bulkvs", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bloby"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bulkvs\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
