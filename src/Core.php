@@ -33,7 +33,7 @@ class Core {
         $this->api_key      = config('bulkvs.api_key');
         $this->api_secret   = config('bulkvs.is_md5') ? config('bulkvs.api_secret') : md5(config('bulkvs.api_secret'));
 
-        $this->client = new \SoapClient($this->wsdl_url);
+        $this->client = new \SoapClient($this->wsdl_url, ['trace' => 1]);
     }
 
     public function getClient()
@@ -57,10 +57,10 @@ class Core {
         }
 
         $params = $this->filterParams($params);
-        $params += [
+        $params = [
             'apikey' => $this->api_key,
             'apisecret' => $this->api_secret,
-        ];
+        ] + $params;
 
         $result = $this->client->__soapCall($method, $params);
 

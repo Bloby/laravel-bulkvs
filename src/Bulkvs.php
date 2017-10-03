@@ -15,16 +15,16 @@ class Bulkvs extends Core
     /**
      * First run "e911validateAddress" to validate a US or Canadian address
      *
+     * @param $address1
+     * @param string $address2
      * @param $state
      * @param $city
      * @param $zip
-     * @param $address1
-     * @param null $address2
      * @return mixed|null
      */
-    public function e911validateAddress($state, $city, $zip, $address1, $address2 = null)
+    public function e911validateAddress($address1, $address2, $city, $state, $zip)
     {
-        return $this->_handleQuery('e911validateAddress', compact(['state','city','zip','address1','address2']));
+        return $this->_handleQuery('e911validateAddress', compact(['address1','address2','city','state','zip']));
     }
 
     /**
