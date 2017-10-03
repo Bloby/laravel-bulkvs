@@ -24,7 +24,7 @@ class Bulkvs extends Core
      */
     public function e911validateAddress($state, $city, $zip, $address1, $address2 = null)
     {
-        return $this->_handleQuery('e911validateAddress ', compact(['state','city','zip','address1','address2']));
+        return $this->_handleQuery('e911validateAddress', compact(['state','city','zip','address1','address2']));
     }
 
     /**
@@ -37,7 +37,7 @@ class Bulkvs extends Core
      */
     public function e911provisionAddress($dn, $callername, $addressid)
     {
-        return $this->_handleQuery('e911provisionAddress ', compact(['dn','callername','addressid']));
+        return $this->_handleQuery('e911provisionAddress', compact(['dn','callername','addressid']));
     }
 
 }
