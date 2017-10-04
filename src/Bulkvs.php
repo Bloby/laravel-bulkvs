@@ -39,4 +39,19 @@ class Bulkvs extends Core
     {
         return $this->_handleQuery('e911provisionAddress', compact(['dn','callername','addressid']));
     }
+    
+    public function e911removeRecord($dn)
+    {
+        return $this->_handleQuery('e911removeRecord', compact(['dn']));
+    }
+
+    public function e911queryRecord($dn)
+    {
+        return $this->_handleQuery('e911queryRecord', compact(['dn']));
+    }
+
+    public function e911queryAll()
+    {
+        return $this->_handleQuery('e911queryAll', compact([]));
+    }
 }
